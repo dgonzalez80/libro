@@ -1,3 +1,7 @@
 `r if (knitr:::is_html_output()) '
 # Referencias {-}
 '`
+
++ https://bookdown.org/yihui/bookdown/get-started.html
+
+ 
