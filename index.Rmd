@@ -1,0 +1,14 @@
+--- 
+title: "Notas de Probabilidad y Estadistica"
+author: "Daniel Enrique Gonzalez Gomez"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: book
+bibliography: [book.bib, packages.bib]
+biblio-style: apalike
+link-citations: yes
+description: "Este es un ejemplo del uso de RMarkdown en la contruccion de un libro en formato  bookdown::gitbook."
+---
+
+# Introduccion  {-}

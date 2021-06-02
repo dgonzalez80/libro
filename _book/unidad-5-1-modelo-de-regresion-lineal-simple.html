@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Unidad 5.1 - Modelo de regresion lineal simple | Notas de Probabilidad y Estadistica</title>
+  <meta name="description" content="Este es un ejemplo del uso de RMarkdown en la contruccion de un libro en formato bookdown::gitbook." />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Unidad 5.1 - Modelo de regresion lineal simple | Notas de Probabilidad y Estadistica" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Este es un ejemplo del uso de RMarkdown en la contruccion de un libro en formato bookdown::gitbook." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Unidad 5.1 - Modelo de regresion lineal simple | Notas de Probabilidad y Estadistica" />
+  
+  <meta name="twitter:description" content="Este es un ejemplo del uso de RMarkdown en la contruccion de un libro en formato bookdown::gitbook." />
+  
+
+<meta name="author" content="Daniel Enrique Gonzalez Gomez" />
+
+
+<meta name="date" content="2021-06-01" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="modulo-5-aplica-lo-aprendido.html"/>
+<link rel="next" href="unidad-5-2-modelo-de-regresion-lineal-multiple.html"/>
+<script src="libs/header-attrs-2.8/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduccion</a></li>
+<li class="chapter" data-level="" data-path="modulo-0-lo-que-debes-saber-antes-de-empezar.html"><a href="modulo-0-lo-que-debes-saber-antes-de-empezar.html"><i class="fa fa-check"></i>MODULO 0 - LO QUE DEBES SABER ANTES DE EMPEZAR</a></li>
+<li class="chapter" data-level="" data-path="unidad-01-sumatorias.html"><a href="unidad-01-sumatorias.html"><i class="fa fa-check"></i>Unidad 01 - Sumatorias</a></li>
+<li class="chapter" data-level="" data-path="unidad-02-productoria.html"><a href="unidad-02-productoria.html"><i class="fa fa-check"></i>Unidad 02 - Productoria</a></li>
+<li class="chapter" data-level="" data-path="unidad-03-tecnicas-de-conteo.html"><a href="unidad-03-tecnicas-de-conteo.html"><i class="fa fa-check"></i>Unidad 03 - Tecnicas de conteo</a></li>
+<li class="chapter" data-level="" data-path="unidad-04-funcion-exponencial.html"><a href="unidad-04-funcion-exponencial.html"><i class="fa fa-check"></i>Unidad 04 - Funcion exponencial</a></li>
+<li class="chapter" data-level="" data-path="unidad-05-funcion-logaritmica.html"><a href="unidad-05-funcion-logaritmica.html"><i class="fa fa-check"></i>Unidad 05 - Funcion logaritmica</a></li>
+<li class="chapter" data-level="" data-path="unidad-06-derivacion.html"><a href="unidad-06-derivacion.html"><i class="fa fa-check"></i>Unidad 06 - Derivacion</a></li>
+<li class="chapter" data-level="" data-path="unidad-07-integracion.html"><a href="unidad-07-integracion.html"><i class="fa fa-check"></i>Unidad 07 - Integracion</a></li>
+<li class="chapter" data-level="" data-path="modulo-1-analiza-tus-datos.html"><a href="modulo-1-analiza-tus-datos.html"><i class="fa fa-check"></i>MODULO 1 - ANALIZA TUS DATOS</a></li>
+<li class="chapter" data-level="" data-path="unidad-1-1-bases-de-datos.html"><a href="unidad-1-1-bases-de-datos.html"><i class="fa fa-check"></i>Unidad 1.1 - Bases de datos</a></li>
+<li class="chapter" data-level="" data-path="unidad-1-2-tablas-de-frecuencia.html"><a href="unidad-1-2-tablas-de-frecuencia.html"><i class="fa fa-check"></i>Unidad 1.2 - Tablas de frecuencia</a></li>
+<li class="chapter" data-level="" data-path="unidad-1-3-indicadores-de-posicion.html"><a href="unidad-1-3-indicadores-de-posicion.html"><i class="fa fa-check"></i>Unidad 1.3 - Indicadores de posicion</a></li>
+<li class="chapter" data-level="" data-path="unidad-1-5-indicadores-de-dispersion.html"><a href="unidad-1-5-indicadores-de-dispersion.html"><i class="fa fa-check"></i>Unidad 1.5 - Indicadores de dispersion</a></li>
+<li class="chapter" data-level="" data-path="unidad-1-5-indicadores-de-dispersion-1.html"><a href="unidad-1-5-indicadores-de-dispersion-1.html"><i class="fa fa-check"></i>Unidad 1.5 - Indicadores de dispersion</a></li>
+<li class="chapter" data-level="" data-path="modulo-2-cuantifica-el-riesgo.html"><a href="modulo-2-cuantifica-el-riesgo.html"><i class="fa fa-check"></i>MODULO 2 - CUANTIFICA EL RIESGO</a></li>
+<li class="chapter" data-level="" data-path="unidad-2-1-conceptos-basicos.html"><a href="unidad-2-1-conceptos-basicos.html"><i class="fa fa-check"></i>Unidad 2.1 - Conceptos basicos</a></li>
+<li class="chapter" data-level="" data-path="unidad-2-2-enfoques-de-probabilidad.html"><a href="unidad-2-2-enfoques-de-probabilidad.html"><i class="fa fa-check"></i>Unidad 2.2 - Enfoques de probabilidad</a></li>
+<li class="chapter" data-level="" data-path="unidad-2-3-tipos-de-probabilidad.html"><a href="unidad-2-3-tipos-de-probabilidad.html"><i class="fa fa-check"></i>Unidad 2.3 - Tipos de probabilidad</a></li>
+<li class="chapter" data-level="" data-path="unidad-2-4-teorema-de-bayes.html"><a href="unidad-2-4-teorema-de-bayes.html"><i class="fa fa-check"></i>Unidad 2.4 - Teorema de Bayes</a></li>
+<li class="chapter" data-level="" data-path="unidad-2-5-arboles-de-decision.html"><a href="unidad-2-5-arboles-de-decision.html"><i class="fa fa-check"></i>Unidad 2.5 - Arboles de decision</a></li>
+<li class="chapter" data-level="" data-path="modulo-3-conoce-sobre-modelos-estadisticos.html"><a href="modulo-3-conoce-sobre-modelos-estadisticos.html"><i class="fa fa-check"></i>MODULO 3 - CONOCE SOBRE MODELOS ESTADISTICOS</a></li>
+<li class="chapter" data-level="" data-path="unidad-3-1-variables-aleatorias.html"><a href="unidad-3-1-variables-aleatorias.html"><i class="fa fa-check"></i>Unidad 3.1 - Variables aleatorias</a></li>
+<li class="chapter" data-level="" data-path="unidad-3-2-variables-aleatorias-conjuntas.html"><a href="unidad-3-2-variables-aleatorias-conjuntas.html"><i class="fa fa-check"></i>Unidad 3.2 - Variables aleatorias conjuntas</a></li>
+<li class="chapter" data-level="" data-path="unidad-3-3-modelos-especiales-discretos.html"><a href="unidad-3-3-modelos-especiales-discretos.html"><i class="fa fa-check"></i>Unidad 3.3 - Modelos especiales discretos</a></li>
+<li class="chapter" data-level="" data-path="unidad-3-4-modelos-especiales-continuos.html"><a href="unidad-3-4-modelos-especiales-continuos.html"><i class="fa fa-check"></i>Unidad 3.4 - Modelos especiales continuos</a></li>
+<li class="chapter" data-level="" data-path="modulo-4-generaliza-los-resultados-e-hipotesis.html"><a href="modulo-4-generaliza-los-resultados-e-hipotesis.html"><i class="fa fa-check"></i>MODULO 4 - GENERALIZA LOS RESULTADOS E HIPOTESIS</a></li>
+<li class="chapter" data-level="" data-path="unidad-4-1-introduccion-a-la-inferencia.html"><a href="unidad-4-1-introduccion-a-la-inferencia.html"><i class="fa fa-check"></i>Unidad 4.1 - Introduccion a la inferencia</a></li>
+<li class="chapter" data-level="" data-path="unidad-4-2-estimacion-por-intervalos-de-confianza.html"><a href="unidad-4-2-estimacion-por-intervalos-de-confianza.html"><i class="fa fa-check"></i>Unidad 4.2 - Estimacion por intervalos de confianza</a></li>
+<li class="chapter" data-level="" data-path="unidad-4-3-prueba-de-hipotesis-parametrica.html"><a href="unidad-4-3-prueba-de-hipotesis-parametrica.html"><i class="fa fa-check"></i>Unidad 4.3 - Prueba de hipotesis parametrica</a></li>
+<li class="chapter" data-level="" data-path="unidad-4-4-prueba-de-hipotesis-no-parametricas.html"><a href="unidad-4-4-prueba-de-hipotesis-no-parametricas.html"><i class="fa fa-check"></i>Unidad 4.4 - Prueba de hipotesis no parametricas</a></li>
+<li class="chapter" data-level="" data-path="modulo-5-aplica-lo-aprendido.html"><a href="modulo-5-aplica-lo-aprendido.html"><i class="fa fa-check"></i>MODULO 5 - APLICA LO APRENDIDO</a></li>
+<li class="chapter" data-level="" data-path="unidad-5-1-modelo-de-regresion-lineal-simple.html"><a href="unidad-5-1-modelo-de-regresion-lineal-simple.html"><i class="fa fa-check"></i>Unidad 5.1 - Modelo de regresion lineal simple</a></li>
+<li class="chapter" data-level="" data-path="unidad-5-2-modelo-de-regresion-lineal-multiple.html"><a href="unidad-5-2-modelo-de-regresion-lineal-multiple.html"><i class="fa fa-check"></i>Unidad 5.2 - Modelo de regresion lineal multiple</a></li>
+<li class="chapter" data-level="" data-path="anexos.html"><a href="anexos.html"><i class="fa fa-check"></i>ANEXOS</a></li>
+<li class="chapter" data-level="" data-path="referencias.html"><a href="referencias.html"><i class="fa fa-check"></i>Referencias</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Notas de Probabilidad y Estadistica</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="unidad-5.1---modelo-de-regresion-lineal-simple" class="section level1 unnumbered">
+<h1>Unidad 5.1 - Modelo de regresion lineal simple</h1>
+
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="modulo-5-aplica-lo-aprendido.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="unidad-5-2-modelo-de-regresion-lineal-multiple.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
